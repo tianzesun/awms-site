@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWMS: Academic Workload Management</title>
+  <meta name="description" content="AWMS calculates academic workload the same way for every faculty member: live course data, versioned policy rules, annual sign-off and a clear way to fix disputes." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="bg-slate-50 font-sans text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#" class="flex items-center gap-2.5" aria-label="AWMS home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        </span>
+        <span class="text-lg font-bold tracking-tight">AWMS</span>
+      </a>
+      <nav aria-label="Main" class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+        <a href="#features" class="hover:text-ink">Features</a>
+        <a href="#signoff" class="hover:text-ink">Sign-off</a>
+        <a href="#how" class="hover:text-ink">How it works</a>
+        <a href="#roles" class="hover:text-ink">Roles</a>
+        <a href="#trust" class="hover:text-ink">Security</a>
+      </nav>
+      <a href="mailto:t.sun@utoronto.ca?subject=AWMS%20demo%20request" class="btn-primary py-2.5">Request a demo</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-slate-50" aria-hidden="true"></div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
+        <div class="min-w-0">
+          <p class="eyebrow">Academic Workload Management System</p>
+          <h1 class="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            Academic workload, worked out the <span class="text-brand-600">same way for everyone</span>.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+            AWMS brings teaching, service, supervision, releases and leave into one annual figure per faculty member. Your department's own rules drive the calculation, every number traces back to its source, and each year ends with a statement that faculty acknowledge and the chair signs off.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:t.sun@utoronto.ca?subject=AWMS%20demo%20request" class="btn-primary">Request a demo</a>
+            <a href="#how" class="btn-secondary">See how it works</a>
+          </div>
+          <p class="mt-6 text-sm text-slate-500">Built and in use at the University of Toronto.</p>
+        </div>
+
+        <!-- Mock: faculty statement -->
+        <div class="mock min-w-0 p-5 sm:p-6" role="img" aria-label="Illustration of a faculty member's annual workload statement: 3.50 of 3.50 FCE, on target, ready to acknowledge">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">2026-27 workload statement</p>
+              <p class="mt-1 font-semibold">Prof. Avery Example</p>
+            </div>
+            <span class="chip bg-emerald-50 text-emerald-700 ring-emerald-200">On target</span>
+          </div>
+          <div class="mt-6 flex items-end gap-3">
+            <p class="text-5xl font-bold tabular-nums">3.50</p>
+            <p class="pb-1.5 text-sm text-slate-500">of 3.50 FCE<br />includes 0.50 FCE of releases</p>
+          </div>
+          <div class="mt-4 h-3 overflow-hidden rounded-full bg-slate-100">
+            <div class="h-full w-full rounded-full bg-gradient-to-r from-brand-500 to-brand-600"></div>
+          </div>
+          <dl class="mt-6 grid grid-cols-2 gap-2 text-center sm:grid-cols-4">
+            <div class="rounded-xl bg-brand-50 p-3"><dt class="text-[10px] font-semibold uppercase tracking-wider text-brand-700">Teaching</dt><dd class="mt-1 font-bold tabular-nums">2.50</dd></div>
+            <div class="rounded-xl bg-violet-50 p-3"><dt class="text-[10px] font-semibold uppercase tracking-wider text-violet-700">Service</dt><dd class="mt-1 font-bold tabular-nums">0.50</dd></div>
+            <div class="rounded-xl bg-amber-50 p-3"><dt class="text-[10px] font-semibold uppercase tracking-wider text-amber-700">Supervision</dt><dd class="mt-1 font-bold tabular-nums">0.50</dd></div>
+            <div class="rounded-xl bg-rose-50 p-3"><dt class="text-[10px] font-semibold uppercase tracking-wider text-rose-700">Release</dt><dd class="mt-1 font-bold tabular-nums">0.50</dd></div>
+          </dl>
+          <div class="mt-6 flex flex-col gap-3 rounded-xl bg-slate-50 p-3 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-xs text-slate-600">Revision 1, published by department staff</p>
+            <div class="flex gap-2">
+              <span class="whitespace-nowrap rounded-lg bg-white px-3 py-1.5 text-xs font-medium ring-1 ring-slate-200">Something wrong?</span>
+              <span class="whitespace-nowrap rounded-lg bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white">Acknowledge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="border-y border-slate-200/70 bg-white">
+      <div class="mx-auto grid max-w-6xl gap-8 px-6 py-14 md:grid-cols-3">
+        <div>
+          <p class="font-semibold">Spreadsheets drift</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Every term someone copies last year's sheet, the formulas change, and no one can say which version is right.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Rules live in people's heads</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Enrolment bonuses, coordinator credits and course releases get applied unevenly, and faculty notice.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Disputes happen by email</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">A faculty member questions a number, the reply takes weeks, and the fix never reaches the official record.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="mx-auto max-w-6xl px-6 py-24">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Features</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Everything a department needs to plan, calculate and confirm workload</h2>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+          <h3 class="mt-4 font-semibold">Live course data</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Courses, sections and enrolment are mirrored from ROSI. Nobody retypes them, and nobody can edit them by accident.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/></svg>
+          <h3 class="mt-4 font-semibold">Your policy, as rules</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Write workload policy as conditions and effects, publish it as a version, and test changes in the policy simulator first.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+          <h3 class="mt-4 font-semibold">One annual figure</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Fall, Winter and Summer add up to a year. Releases and leave lower the target rather than making anyone look underloaded.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>
+          <h3 class="mt-4 font-semibold">Assignment planning</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Assign instructors section by section. Each assignment is checked against the person's annual load before it's saved.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M22 12h-6"/></svg>
+          <h3 class="mt-4 font-semibold">Releases, leave and credits</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Managed release types with caps and grant accounts, leave with FTE, teaching credits, service roles and supervision.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+          <h3 class="mt-4 font-semibold">Annual sign-off</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Publish a frozen statement, let faculty acknowledge it, and have the chair sign off. Every revision is kept.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 7v4M12 14h.01"/></svg>
+          <h3 class="mt-4 font-semibold">Disputes that become fixes</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Faculty flag the exact line. Staff open it in the editor, and the reply shows what changed, before and after.</p>
+        </article>
+        <article class="card">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></svg>
+          <h3 class="mt-4 font-semibold">One inbox, one checklist</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Everything waiting on someone lands in one inbox, and a term checklist shows how far planning has got.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Spotlight: sign-off -->
+    <section id="signoff" class="bg-white">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
+        <div>
+          <p class="eyebrow">Annual sign-off</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight">Close the year with a record everyone agreed to</h2>
+          <ol class="mt-8 space-y-5">
+            <li class="flex gap-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">1</span>
+              <div><p class="font-semibold">Staff publish</p><p class="mt-1 text-sm text-slate-600">The year is frozen from the latest calculation as a numbered revision. Recalculating with no change doesn't create a new one.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">2</span>
+              <div><p class="font-semibold">Faculty acknowledge, or dispute</p><p class="mt-1 text-sm text-slate-600">They review the statement line by line on their dashboard. While a dispute is open, they can't acknowledge.</p></div>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-bold text-brand-700">3</span>
+              <div><p class="font-semibold">The chair signs off</p><p class="mt-1 text-sm text-slate-600">Sign-off is blocked if figures have moved since publishing. Every sign-off is audited, and later changes need a new revision.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Mock: sign-off list -->
+        <div class="mock overflow-hidden" role="img" aria-label="Illustration of the sign-off list showing faculty members at different stages: signed off, ready to sign off, awaiting faculty, disputed and changed since published">
+          <div class="flex items-center justify-between border-b border-slate-100 px-5 py-4">
+            <p class="font-semibold">Sign-off · 2026-27</p>
+            <span class="rounded-lg bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white">Publish selected</span>
+          </div>
+          <ul class="divide-y divide-slate-100 text-sm">
+            <li class="flex items-center justify-between px-5 py-3.5"><span>Example, Avery</span><span class="flex items-center gap-3"><span class="hidden tabular-nums text-slate-500 sm:inline">3.50 / 3.50</span><span class="chip bg-emerald-50 text-emerald-700 ring-emerald-200">Signed off</span></span></li>
+            <li class="flex items-center justify-between px-5 py-3.5"><span>Sample, Jordan</span><span class="flex items-center gap-3"><span class="hidden tabular-nums text-slate-500 sm:inline">4.00 / 4.00</span><span class="chip bg-brand-50 text-brand-700 ring-brand-200">Ready to sign off</span></span></li>
+            <li class="flex items-center justify-between px-5 py-3.5"><span>Demo, Riley</span><span class="flex items-center gap-3"><span class="hidden tabular-nums text-slate-500 sm:inline">2.75 / 3.00</span><span class="chip bg-sky-50 text-sky-700 ring-sky-200">Awaiting faculty</span></span></li>
+            <li class="flex items-center justify-between px-5 py-3.5"><span>Placeholder, Sam</span><span class="flex items-center gap-3"><span class="hidden tabular-nums text-slate-500 sm:inline">4.50 / 4.00</span><span class="chip bg-amber-50 text-amber-700 ring-amber-200">Disputed</span></span></li>
+            <li class="flex items-center justify-between px-5 py-3.5"><span>Testcase, Morgan</span><span class="flex items-center gap-3"><span class="hidden tabular-nums text-slate-500 sm:inline">3.00 / 3.25</span><span class="chip bg-violet-50 text-violet-700 ring-violet-200">Changed since published</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spotlight: disputes -->
+    <section class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
+      <!-- Mock: discrepancy row -->
+      <div class="mock order-last p-5 lg:order-first" role="img" aria-label="Illustration of a workload dispute: a faculty member flagged a research release, and the row shows the change since it was reported">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold">Release: RESEARCH, 2026F</p>
+            <p class="mt-0.5 text-xs text-slate-500">Reported by Prof. Riley Demo · 2 days ago</p>
+          </div>
+          <span class="chip bg-amber-50 text-amber-700 ring-amber-200">Open</span>
+        </div>
+        <p class="mt-4 rounded-xl bg-slate-50 p-3 text-sm text-slate-700">“My research release was approved at 0.50 FCE, but the statement shows 0.25.”</p>
+        <p class="mt-4 text-xs font-medium text-brand-700">Since reported: Release 0.25 → 0.50 FCE; target 3.25 → 3.00 FCE</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="rounded-lg bg-white px-3 py-1.5 text-xs font-medium ring-1 ring-slate-200">Open in editor</span>
+          <span class="rounded-lg bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white">Resolve</span>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Load disputes</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight">When a number looks wrong, fix the record, not just the email thread</h2>
+        <ul class="mt-8 space-y-4 text-slate-600">
+          <li class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Faculty report the exact line, such as a course, release, service role or the annual total.</li>
+          <li class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Staff jump straight to that line in the workload editor.</li>
+          <li class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand-600" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>The reply carries a before-and-after summary, so the faculty member sees exactly what changed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="bg-brand-900 text-white">
+      <div class="mx-auto max-w-6xl px-6 py-24">
+        <div class="max-w-2xl">
+          <p class="text-xs font-semibold uppercase tracking-widest text-brand-200">How it works</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Facts from ROSI, decisions in AWMS</h2>
+          <p class="mt-4 text-brand-100/80">AWMS keeps the source of truth and the department's decisions apart, so a change to one never quietly overwrites the other.</p>
+        </div>
+        <ol class="mt-12 grid gap-5 md:grid-cols-3">
+          <li class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <p class="text-sm font-semibold text-brand-200">1 · Source</p>
+            <p class="mt-2 text-lg font-semibold">ROSI</p>
+            <p class="mt-2 text-sm leading-relaxed text-brand-100/80">The university's system controls courses, sections, enrolment and terms. AWMS only reads from it.</p>
+          </li>
+          <li class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <p class="text-sm font-semibold text-brand-200">2 · Mirror</p>
+            <p class="mt-2 text-lg font-semibold">Read-only snapshot</p>
+            <p class="mt-2 text-sm leading-relaxed text-brand-100/80">A synced copy with change detection. Sections removed in ROSI are marked inactive, never deleted.</p>
+          </li>
+          <li class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <p class="text-sm font-semibold text-brand-200">3 · Governance</p>
+            <p class="mt-2 text-lg font-semibold">AWMS decisions</p>
+            <p class="mt-2 text-sm leading-relaxed text-brand-100/80">Assignments, releases, adjustments and sign-offs. This is the only layer anyone edits.</p>
+          </li>
+        </ol>
+        <p class="mt-10 max-w-3xl text-sm leading-relaxed text-brand-100/80">
+          Each calculation is saved as a snapshot of the course data, the assignments and the published policy version it used. Months later, you can still show exactly how a number was reached.
+        </p>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section id="roles" class="mx-auto max-w-6xl px-6 py-24">
+      <div class="max-w-2xl">
+        <p class="eyebrow">For every role</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Each person sees what they're responsible for</h2>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <article class="card">
+          <h3 class="font-semibold">Faculty</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Their own workload, history and statement, plus a simple way to question a figure.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-semibold">Department staff</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Assignments, releases, leave, letters and the inbox of everything waiting on them.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-semibold">Chairs</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Department-wide loads, policy, approvals and the annual sign-off.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-semibold">Deans</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Capacity, budget, forecasts and hiring justification across departments.</p>
+        </article>
+        <article class="card">
+          <h3 class="font-semibold">Administrators</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Users and roles, reference data, terms, integrations and the audit log.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section id="trust" class="bg-white">
+      <div class="mx-auto max-w-6xl px-6 py-24">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Security and accountability</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight">Built for university data</h2>
+        </div>
+        <dl class="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div><dt class="font-semibold">University sign-in</dt><dd class="mt-2 text-sm leading-relaxed text-slate-600">Supports UTORid single sign-on through Shibboleth.</dd></div>
+          <div><dt class="font-semibold">Scoped access</dt><dd class="mt-2 text-sm leading-relaxed text-slate-600">Staff and chairs see only their own department. Faculty see only their own records.</dd></div>
+          <div><dt class="font-semibold">Full audit trail</dt><dd class="mt-2 text-sm leading-relaxed text-slate-600">Publishing, sign-off, dispute replies and other changes are recorded with who and when.</dd></div>
+          <div><dt class="font-semibold">Reproducible numbers</dt><dd class="mt-2 text-sm leading-relaxed text-slate-600">Calculations are tied to a published policy version and a data snapshot.</dd></div>
+          <div><dt class="font-semibold">Modern password storage</dt><dd class="mt-2 text-sm leading-relaxed text-slate-600">Local accounts are hashed with Argon2id.</dd></div>
+          <div><dt class="font-semibold">Safe error handling</dt><dd class="mt-2 text-sm leading-relaxed text-slate-600">Users see a generic message and a reference ID. Details stay in the server logs.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-6xl px-6 py-24">
+      <div class="rounded-3xl bg-gradient-to-br from-brand-600 to-brand-700 px-8 py-14 text-center text-white sm:px-16">
+        <h2 class="text-3xl font-bold tracking-tight">See AWMS with your department's rules</h2>
+        <p class="mx-auto mt-4 max-w-xl text-brand-50/90">We'll walk through planning, calculation and sign-off, and talk about how your workload policy would map onto the policy engine.</p>
+        <a href="mailto:t.sun@utoronto.ca?subject=AWMS%20demo%20request" class="btn mt-8 bg-white text-brand-700 hover:bg-brand-50">Request a demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p><span class="font-semibold text-ink">AWMS</span> · Academic Workload Management System · University of Toronto</p>
+      <p>Screens on this page are illustrations with fictional names and figures.</p>
+    </div>
+  </footer>
+</body>
+</html>

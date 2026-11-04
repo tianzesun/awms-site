@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Teal matches the AWMS app's primary colour (hsl 173 80% 40%) */
+@theme {
+  --color-brand-50: hsl(173 70% 96%);
+  --color-brand-100: hsl(173 65% 90%);
+  --color-brand-200: hsl(173 60% 80%);
+  --color-brand-500: hsl(173 80% 40%);
+  --color-brand-600: hsl(173 82% 33%);
+  --color-brand-700: hsl(174 80% 26%);
+  --color-brand-900: hsl(176 70% 14%);
+  --color-ink: hsl(215 28% 17%);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Section anchors land below the sticky header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+}
+@utility btn-primary {
+  @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+}
+@utility btn-secondary {
+  @apply btn bg-white text-ink ring-1 ring-slate-200 hover:bg-slate-50;
+}
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-widest text-brand-600;
+}
+@utility card {
+  @apply rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70;
+}
+/* Product mock-ups: fictional data, styled like the app */
+@utility mock {
+  @apply rounded-2xl bg-white shadow-xl ring-1 ring-slate-200;
+}
+@utility chip {
+  @apply inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-semibold ring-1 ring-inset;
+}
