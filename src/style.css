@@ -1,20 +1,26 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/source-serif-4";
 @import "tailwindcss";
 
-/* Teal matches the AWMS app's primary colour (hsl 173 80% 40%) */
+/* A restrained palette: warm paper, navy ink, one teal accent (a deeper
+   shade of the AWMS app's primary) */
 @theme {
-  --color-brand-50: hsl(173 70% 96%);
-  --color-brand-100: hsl(173 65% 90%);
-  --color-brand-200: hsl(173 60% 80%);
-  --color-brand-500: hsl(173 80% 40%);
-  --color-brand-600: hsl(173 82% 33%);
-  --color-brand-700: hsl(174 80% 26%);
-  --color-brand-900: hsl(176 70% 14%);
-  --color-ink: hsl(215 28% 17%);
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-paper: #faf9f6;
+  --color-ink: #16202e;
+  --color-ink-soft: #4a5567;
+  --color-ink-faint: #7b8494;
+  --color-line: #e3e0d8;
+  --color-line-soft: #eeece6;
+  --color-accent: hsl(174 72% 28%);
+  --color-accent-dark: hsl(176 70% 20%);
+  --color-accent-tint: hsl(170 40% 94%);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, serif;
 }
 
 html {
   scroll-behavior: smooth;
+  font-feature-settings: "cv11", "ss01";
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -25,28 +31,25 @@ html {
 
 /* Section anchors land below the sticky header */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.5rem;
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600;
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
 }
 @utility btn-primary {
-  @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+  @apply btn bg-ink text-white hover:bg-accent-dark;
 }
-@utility btn-secondary {
-  @apply btn bg-white text-ink ring-1 ring-slate-200 hover:bg-slate-50;
+@utility btn-quiet {
+  @apply btn px-0 text-ink underline decoration-line underline-offset-4 hover:decoration-ink;
 }
-@utility eyebrow {
-  @apply text-xs font-semibold uppercase tracking-widest text-brand-600;
+@utility display {
+  @apply font-serif font-medium tracking-tight text-ink;
 }
-@utility card {
-  @apply rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70;
+/* Product screens: fictional data, drawn like the app */
+@utility screen {
+  @apply overflow-hidden rounded-lg border border-line bg-white shadow-[0_1px_2px_rgba(22,32,46,0.04),0_12px_32px_-12px_rgba(22,32,46,0.18)];
 }
-/* Product mock-ups: fictional data, styled like the app */
-@utility mock {
-  @apply rounded-2xl bg-white shadow-xl ring-1 ring-slate-200;
-}
-@utility chip {
-  @apply inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-semibold ring-1 ring-inset;
+@utility pill {
+  @apply inline-flex items-center whitespace-nowrap rounded px-1.5 py-0.5 text-[11px] font-medium;
 }

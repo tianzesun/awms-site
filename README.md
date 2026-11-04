@@ -1,7 +1,7 @@
 # AWMS showcase site
 
 A one-page static site that presents AWMS (Academic Workload Management System)
-to other University of Toronto units. The product screens are HTML mock-ups
+to universities. The product screens are HTML mock-ups
 with fictional names and figures: no real faculty data appears anywhere.
 
 ## Develop
@@ -19,7 +19,7 @@ be hosted anywhere static files are served (GitHub Pages, U of T web hosting).
 ## Editing
 
 - Content: `index.html`
-- Brand colours and shared styles: `src/style.css` (teal matches the AWMS app)
-- The "Request a demo" buttons are `mailto:` links; change the address in
-  `index.html` (three places) if demo requests should go elsewhere.
+- Brand colours, fonts and shared styles: `src/style.css`. Fonts (Inter, Source Serif 4, both OFL) are bundled from @fontsource, so the site makes no third-party requests.
+- "Book a demo" buttons scroll to the contact section, which has the one
+  `mailto:` link and the address shown beside it; change both together.
 - Keep claims to what the app actually does, and keep mock-up data fictional.
